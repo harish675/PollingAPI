@@ -3,6 +3,16 @@ const express  = require('express');
 const app = express();
 const port = 8000;
 const db = require('./config/mongoose');
+const expressLayouts = require('express-ejs-layouts');
+
+//set the  view engine
+app.set('view engine','ejs');
+app.set('views','./views');
+//set up routes 
+app.use('/',require('./routes/index'));
+
+
+
 
 app.listen(port,function(err){
      
