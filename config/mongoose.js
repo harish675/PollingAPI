@@ -1,7 +1,7 @@
 
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1/pollingApi_deployment');
+mongoose.connect('mongodb+srv://api:api@cluster0.69mcmpg.mongodb.net/api');
 
 const db = mongoose.connection;
 

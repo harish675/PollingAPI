@@ -6,10 +6,38 @@
   <body>
     
      <form action="/question/create" method="POST">
-         <input type=""  name="title" placeholder="write question here.." required>
+         <input type="text"  name="title" placeholder="write question here.." required>
          <button type="submit">Add</button>
      </form>
-     
+      
+      
+      <!--showing all the questions in home page -->
+
+      <div id="question-container">
+              
+        <ul>
+            <%for(let i=0;i<que_list.length;i++){%> 
+                     
+                <li>
+                    <p><%= que_list[i].title %></p>
+                    <p><%= que_list[i]._id %></p>
+                    
+                   <a href="/question/delete/<%=que_list[i]._id%>">Delete</a>
+
+                    <form action="/option/create/<%=que_list[i]._id%>" method="POST">
+                          <input type="text" name="option" placeholder="write option here.." required>
+                          <button type="submit">Add Option</button>
+                    </form> 
+                        
+                    </li>
+                  
+             <% }; %>
+             
+          </ul>
+      </div>
+            
+      </div>
+      
      
   </body>
 
